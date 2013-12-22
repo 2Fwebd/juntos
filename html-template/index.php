@@ -1,6 +1,6 @@
 <?php
 //set your email here:
-$yourEmail = 'help@2f-design.fr';
+$yourEmail = 'youremail@something.com';
 /*
  * CONTACT FORM
  */
