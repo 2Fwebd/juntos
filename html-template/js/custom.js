@@ -15,6 +15,25 @@
     $(window).load(function () {
 		$('#loader').fadeOut();
 	});
+    //FIXED NAVIGATION
+    $(window).scroll(function() {
+		var scroll = $(window).scrollTop();
+	    if (scroll > ($(window).height() -20)) {
+			$("#navigation").addClass('navigation-fixed');
+	    } else {
+			$("#navigation").removeClass('navigation-fixed');
+	    }
+	    if (scroll > 20 & scroll < ($(window).height() -20)) {
+	        $("#navigation").fadeOut("100");
+	    } else {
+		    $('#navigation').fadeIn("1000"); 
+	    }
+	    if (scroll > 60 & scroll < $(window).height()) {
+	        $("#navigation").fadeOut("100");
+	    } else {
+		    $('#navigation').fadeIn("1000"); 
+	    }
+	});
 	//BOOTSTRAP ALERTS FOR FORM
 	$(".alert").alert();
     //RESPONSIVE MENU
@@ -37,11 +56,6 @@
 	    var sequence = $("#project").sequence(options).data("sequence");
 	    $(".sequence-prev, .sequence-next").fadeIn(500);
 	});
-    //FIXED HEADER
-    $("#navigation").sticky({topSpacing:0});
-    $(window).scroll(function () {
-    	$("#navigation").sticky('update');
-    });
     //CAROUSEL
     $(window).load(function() {
 	  $('.flexslider.services-slider').flexslider({
